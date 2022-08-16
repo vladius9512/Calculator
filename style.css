@@ -1,0 +1,40 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+}
+
+ul{
+    display:flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    border-style: double;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.operations {
+    border-style: dashed;
+    border-color: aqua;
+}
+.output-window {
+    border-style:dotted;
+    border-color:chartreuse;
+    text-align: right;
+}
+.block {
+    border-style: groove;
+}
