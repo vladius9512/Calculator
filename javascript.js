@@ -73,31 +73,23 @@ const numbersClickHandler = (e) =>{
         displayString='';
         operator='';
     }
-    if(displayString.length>=10)
-    {
-        errorDisplay.textContent = 'We can only do 10 figures at a time :(';
-        return;
-    }
     displayString += choosing;
-    display.textContent = displayString;
+    display.textContent = Number(displayString);
     history.textContent += choosing;
     errorDisplay.textContent = '';
     currentValue = Number(displayString);
 }
 
+
+
 const operationsClickHandler = (e) =>{
     const choosing = e.target.dataset.value;
     if(!choosing) return;
-    /*if(count===1)
+    if(operator === '')
     {
-        currentValue = parseFloat(displayString);
-        count++;
+        operationResult = currentValue;
     }
-    else {
-        operationResult = parseFloat(displayString);
-    }*/
-    operator = e.target.dataset.value;
-    if ((currentValue === 0 || operationResult === 0) && operator === '/') {
+    else if ((currentValue === 0 || operationResult === 0) && operator === '/') {
         display.textContent = 'Nice try!';
     }
     else if(!isLastPressedSign){
@@ -108,6 +100,7 @@ const operationsClickHandler = (e) =>{
         operationResult = result;
         currentValue = 0;
     }
+    operator = e.target.dataset.value;
     if(!isLastPressedSign){
         history.textContent += operator;
     }
@@ -126,8 +119,9 @@ const equalClickHandler = (e) =>{
     if((currentValue===0 || operationResult===0) && operator==='/')
     {
         display.textContent = 'Nice try!';
+        console.log('ajunge');
     }
-    if(currentValue!=undefined && operationResult!=undefined)
+    else if(currentValue!=undefined && operationResult!=undefined)
     {
         console.log(currentValue,operationResult);
         result = operaton(operator,currentValue,operationResult);
