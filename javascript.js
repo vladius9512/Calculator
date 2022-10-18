@@ -150,4 +150,3 @@ const operationButtons = document.querySelectorAll('.keyboard-operator');
 operationButtons.forEach((el,index)=>{
     el.addEventListener('click',operationsClickHandler)
 })
-
